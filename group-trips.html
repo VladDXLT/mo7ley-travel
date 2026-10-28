@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Trips — MO7LEY Travel</title>
+<meta name="description" content="Small-group departures to the Maldives, guided by Vlad. Manta rays, whale sharks, and sandbank sunsets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.gt{ min-height:64vh; display:flex; align-items:flex-end; position:relative; padding:0 0 70px; background:linear-gradient(180deg, rgba(9,14,17,.25), rgba(9,14,17,.88)), linear-gradient(150deg,#0ea5b7,#0a3d62); overflow:hidden; }
+.gt-day{ display:grid; grid-template-columns:70px 1fr; gap:24px; padding:24px 0; border-top:1px solid var(--sand-2); }
+.gt-day:first-child{border-top:none;}
+.gt-day .gd-num{ font-family:"Fraunces",serif; font-style:italic; color:var(--rust); font-size:1.5rem; }
+.gt-day h3{ font-size:1.1rem; margin-bottom:6px; }
+.gt-facts{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
+.gt-fact b{ display:block; font-family:"Fraunces",serif; font-style:italic; font-size:1.6rem; color:var(--gold); }
+.gt-fact span{ font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.65); font-family:"Inter",sans-serif; }
+.faq-item{ border-top:1px solid var(--sand-2); padding:22px 0; }
+.faq-item:last-child{ border-bottom:1px solid var(--sand-2); }
+.faq-item h4{ font-size:1rem; font-weight:600; font-family:"Inter",sans-serif; color:var(--navy); margin-bottom:8px; }
+#gt-gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:10px; }
+#gt-gallery .gt-feature{ grid-column:span 2; grid-row:span 2; aspect-ratio:auto !important; }
+</style>
+</head>
+<body data-page="group-trips" data-loader="boat" data-loader-label="setting sail">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero gt">
+  <div class="wrap" style="position:relative;color:#fff;">
+    <div class="crumb"><a href="index.html">Home</a> <span>/</span> <span>Group Trips</span></div>
+    <span class="eyebrow" style="color:var(--gold);">Group Trips · Now Booking</span>
+    <h1 style="color:#fff;font-size:clamp(2.2rem,5vw,3.8rem);">Maldives, the MO7LEY way.</h1>
+    <p style="max-width:560px;color:rgba(255,255,255,.82);font-family:'Inter',sans-serif;">Small crew. Liveaboard-style days. Manta rays, whale sharks, and reef dives in the water we know better than anywhere else on earth.</p>
+    <div class="gt-facts" style="margin-top:34px;max-width:560px;">
+      <div class="gt-fact"><b>7</b><span>Days</span></div>
+      <div class="gt-fact"><b>8–10</b><span>Guests</span></div>
+      <div class="gt-fact"><b>2</b><span>Guides</span></div>
+      <div class="gt-fact"><b>∞</b><span>Manta Sightings</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap" style="max-width:760px;">
+    <p class="reveal" style="font-size:1.1rem;color:var(--navy);">This is our flagship trip, and the only group departure we run right now — on purpose. We've spent enough time in the Maldives to know exactly where to be, when, and with which boat captain. Everything else is still on the "someday" list until we've spent enough time there ourselves to stand behind it.</p>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--sand-2);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The Shape Of The Week</span><h2>A rough itinerary.</h2><p>Exact days shift with tides, weather, and what the ocean is doing that week — this is the shape of it.</p></div>
+    <div class="reveal" style="max-width:720px;margin:0 auto;">
+      <div class="gt-day"><div class="gd-num">01</div><div><h3>Arrival &amp; check-in</h3><p>Fly into Malé, transfer out to the boat, settle in. Easy first day on purpose.</p></div></div>
+      <div class="gt-day"><div class="gd-num">02</div><div><h3>Reef diving, check dives</h3><p>Get everyone dialed in on gear and buoyancy before the bigger stuff.</p></div></div>
+      <div class="gt-day"><div class="gd-num">03</div><div><h3>Manta cleaning station</h3><p>Early launch for the best light and the calmest water. This is the day people fly here for.</p></div></div>
+      <div class="gt-day"><div class="gd-num">04</div><div><h3>Drift diving + sandbank sunset</h3><p>A proper current dive in the morning, dinner on a sandbank that disappears at high tide.</p></div></div>
+      <div class="gt-day"><div class="gd-num">05</div><div><h3>Whale shark search day</h3><p>Open-ocean snorkel day — no guarantees, which is exactly why it's worth it when it happens.</p></div></div>
+      <div class="gt-day"><div class="gd-num">06</div><div><h3>Free day</h3><p>Dive again, freedive, nap, whatever. First truly unstructured day of the trip.</p></div></div>
+      <div class="gt-day"><div class="gd-num">07</div><div><h3>Departure</h3><p>Slow morning, transfer back to Malé, fly out.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The Gallery</span><h2>What it actually looks like.</h2></div>
+    <div class="reveal" id="gt-gallery"></div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--navy);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow" style="color:var(--gold);">Before You Ask</span><h2 style="color:#fff;">Frequently asked.</h2></div>
+    <div class="reveal" style="max-width:720px;margin:0 auto;color:#fff;">
+      <div class="faq-item"><h4 style="color:#fff;">Do I need to be dive-certified?</h4><p style="color:rgba(255,255,255,.7);">Open Water certification is required for the diving days; the snorkel/whale-shark days are open to everyone.</p></div>
+      <div class="faq-item"><h4 style="color:#fff;">What's included?</h4><p style="color:rgba(255,255,255,.7);">Accommodation, boat time, guiding, and most meals. Flights and dive insurance are on you — we'll point you to both.</p></div>
+      <div class="faq-item"><h4 style="color:#fff;">How fit do I need to be?</h4><p style="color:rgba(255,255,255,.7);">Comfortable swimmer, comfortable in open water. No technical skill required beyond your dive certification.</p></div>
+      <div class="faq-item"><h4 style="color:#fff;">When do you run it?</h4><p style="color:rgba(255,255,255,.7);">A couple of departures a year, timed to manta and whale shark season. Join the waitlist and we'll reach out with dates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="text-align:center;">
+  <div class="wrap">
+    <h2 class="reveal" style="font-style:italic;">Eight to ten seats. Twice a year, maybe.</h2>
+    <p class="reveal">Get on the waitlist and we'll email you the second dates open.</p>
+    <a href="contact.html" class="btn btn-coral btn-icon reveal"><svg viewBox="0 0 24 24"><path d="M12 2l1 9h6l-2 3H7l-2-3h6l1-9z"/><path d="M4 17l8 3 8-3-2 4H6l-2-4z"/></svg>Join The Waitlist</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+  window.PHOTO_LIBRARY = window.PHOTO_LIBRARY || {};
+  document.getElementById("gt-gallery").innerHTML = (function(){
+    var photos = (window.PHOTO_LIBRARY["maldives"]||[]);
+    var html = "";
+    var extra = { 0:"gt-feature shape-b", 3:"shape-a", 6:"shape-c" };
+    for(var i=0;i<8;i++){
+      var url = photos[i];
+      var cls = "photo-slot" + (extra[i] ? " "+extra[i] : "");
+      html += '<div class="'+cls+'" data-loc="maldives" data-idx="'+i+'" data-empty="'+(url?"false":"true")+'">' + (url? '<img src="'+url+'" alt="Maldives">':"") + '</div>';
+    }
+    return html;
+  })();
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

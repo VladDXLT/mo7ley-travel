@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan My Trip — MO7LEY Travel</title>
+<meta name="description" content="Tell us where and what — we'll take it from there.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.contact-wrap{ padding:180px 0 110px; }
+.contact-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; }
+.contact-facts{ display:grid; gap:22px; margin-top:34px; }
+.cf-item{ display:flex; gap:14px; }
+.cf-item .ci-i{ width:38px; height:38px; border-radius:50%; border:1px solid var(--rust); color:var(--rust); display:flex; align-items:center; justify-content:center; flex:0 0 38px; }
+form.trip-form{ background:#fff; border:1px solid var(--sand-2); padding:44px; }
+.f-row{ margin-bottom:22px; }
+.f-row label{ display:block; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:var(--navy); margin-bottom:8px; font-family:"Inter",sans-serif; }
+.f-row input, .f-row select, .f-row textarea{
+  width:100%; border:1px solid var(--sand-2); background:var(--sand); padding:13px 14px; font-family:"Inter",sans-serif; font-size:.92rem; color:var(--ink);
+}
+.f-row textarea{ min-height:110px; resize:vertical; }
+.trip-type{ display:flex; gap:10px; flex-wrap:wrap; }
+.trip-type label{ display:flex; align-items:center; gap:8px; border:1px solid var(--sand-2); padding:10px 16px; cursor:pointer; font-size:.82rem; font-weight:600; font-family:"Inter",sans-serif; text-transform:none; letter-spacing:0; }
+.trip-type input{ width:auto; }
+</style>
+</head>
+<body data-page="contact" data-loader="plane" data-loader-label="charting your course" data-nav-solid>
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<section class="contact-wrap">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="crumb on-light"><a href="index.html">Home</a> <span>/</span> <span>Plan My Trip</span></div>
+      <span class="eyebrow">Let's Build It</span>
+      <h1 style="font-size:clamp(2rem,4vw,2.8rem);font-style:italic;color:var(--navy);">Tell us where, and what.</h1>
+      <p style="font-size:1.05rem;">Group trip, fully custom concierge itinerary, or a guided adventure with Vlad directly — start with whatever you know, we'll fill in the rest.</p>
+      <div class="contact-facts">
+        <div class="cf-item"><div class="ci-i">✉</div><div><b style="font-family:'Inter',sans-serif;color:var(--navy);">We reply personally</b><p style="margin:0;font-size:.88rem;">Usually within 2 business days — it's just the two of us.</p></div></div>
+        <div class="cf-item"><div class="ci-i">🧭</div><div><b style="font-family:'Inter',sans-serif;color:var(--navy);">Not sure where yet?</b><p style="margin:0;font-size:.88rem;"><a href="destinations.html" style="color:var(--rust);font-weight:700;">Browse destinations</a> or tell us what scares you and we'll suggest one.</p></div></div>
+        <div class="cf-item"><div class="ci-i">📷</div><div><b style="font-family:'Inter',sans-serif;color:var(--navy);">Follow along</b><p style="margin:0;font-size:.88rem;"><a href="https://www.instagram.com/vladivanenko_/" target="_blank" rel="noopener" style="color:var(--rust);">@vladivanenko_</a></p></div></div>
+      </div>
+    </div>
+
+    <form class="trip-form reveal" id="trip-form">
+      <div class="f-row">
+        <label>Your name</label>
+        <input type="text" name="name" required placeholder="Jane Traveler">
+      </div>
+      <div class="f-row">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@email.com">
+      </div>
+      <div class="f-row">
+        <label>What kind of trip?</label>
+        <div class="trip-type">
+          <label><input type="radio" name="type" value="Group Trip" checked>Group Trip</label>
+          <label><input type="radio" name="type" value="Concierge Planning">Concierge Planning</label>
+          <label><input type="radio" name="type" value="Guided Trip">Guided (with Vlad)</label>
+          <label><input type="radio" name="type" value="Boat Charter">Boat Charter</label>
+        </div>
+      </div>
+      <div class="f-row">
+        <label>Destination (if you know it)</label>
+        <select name="destination" id="dest-select"><option value="">Not sure yet</option></select>
+      </div>
+      <div class="f-row">
+        <label>Tell us more</label>
+        <textarea name="message" placeholder="What are you hoping to do, when, and with who?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-coral btn-icon" style="width:100%;justify-content:center;"><svg viewBox="0 0 24 24"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg>Send It</button>
+      <p style="font-size:.74rem;text-align:center;margin:14px 0 0;color:var(--ink-soft);">Opens your email client, addressed to hello@mo7leytravel.com.</p>
+    </form>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+var sel = document.getElementById("dest-select");
+DESTINATIONS.filter(function(d){return !d.hideCard;}).forEach(function(d){
+  var o = document.createElement("option"); o.value = d.name; o.textContent = d.name; sel.appendChild(o);
+});
+document.getElementById("trip-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = new FormData(e.target);
+  var subject = encodeURIComponent("Trip inquiry: " + (f.get("type")||"") + (f.get("destination") ? " — " + f.get("destination") : ""));
+  var body = encodeURIComponent(
+    "Name: " + f.get("name") + "\nEmail: " + f.get("email") + "\nTrip type: " + f.get("type") +
+    "\nDestination: " + (f.get("destination")||"not sure yet") + "\n\n" + f.get("message")
+  );
+  window.location.href = "mailto:hello@mo7leytravel.com?subject=" + subject + "&body=" + body;
+});
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

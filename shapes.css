@@ -1,0 +1,78 @@
+/* =========================================================
+   MO7LEY TRAVEL — shape language, stickers, icon buttons
+   The "motley" system: organic clipped edges instead of plain
+   rectangles, wax-stamp stickers, and CTA buttons shaped like
+   the things we actually do (fly, sail, climb).
+   ========================================================= */
+
+/* ---------- organic clipped edges (used on hero/feature visuals) ---------- */
+.shape-a{ clip-path: polygon(2% 0%, 100% 0%, 100% 97%, 98% 100%, 0% 100%, 0% 3%); }
+.shape-b{ clip-path: polygon(0% 3%, 97% 0%, 100% 97%, 3% 100%); }
+.shape-c{ clip-path: polygon(3% 0%, 100% 2%, 97% 100%, 0% 98%); }
+.shape-torn{ clip-path: polygon(0% 2%, 6% 0%, 14% 3%, 22% 0%, 30% 3%, 38% 0%, 46% 3%, 54% 0%, 62% 3%, 70% 0%, 78% 3%, 86% 0%, 94% 3%, 100% 0%, 100% 100%, 0% 100%); }
+/* jagged bottom edge only — flat top/sides, used to break up full-bleed hero sections right at the fold */
+.shape-torn-bottom{ clip-path: polygon(0% 0%, 100% 0%, 100% 98%, 94% 100%, 86% 97.3%, 78% 100%, 70% 97.3%, 62% 100%, 54% 97.3%, 46% 100%, 38% 97.3%, 30% 100%, 22% 97.3%, 14% 100%, 6% 97.3%, 0% 100%); }
+
+/* ---------- scroll progress ("flight path") ---------- */
+#scroll-progress{ position:fixed; top:0; left:0; height:3px; width:0%; z-index:1000;
+  background:linear-gradient(90deg, var(--gold,#c3a15a), var(--rust,#a8502e)); transition:width .08s linear; }
+
+/* ---------- stickers ---------- */
+.sticker{
+  display:inline-flex; align-items:center; justify-content:center; text-align:center;
+  width:108px; height:108px; border-radius:50%; border:1px solid currentColor;
+  position:relative; font-family:"Inter",sans-serif; font-weight:700; font-size:.6rem;
+  letter-spacing:.12em; text-transform:uppercase; flex:0 0 auto;
+}
+.sticker::before{ content:""; position:absolute; inset:6px; border:1px dashed currentColor; border-radius:50%; opacity:.55; }
+.sticker span{ position:relative; z-index:1; padding:0 14px; line-height:1.5; }
+.sticker.rot-1{ transform:rotate(-8deg); }
+.sticker.rot-2{ transform:rotate(6deg); }
+.sticker.gold{ color:var(--gold,#c3a15a); }
+.sticker.rust{ color:var(--rust,#a8502e); }
+.sticker.cream{ color:rgba(255,255,255,.85); }
+
+/* ---------- fear meter ---------- */
+.fear-meter{ display:flex; align-items:center; gap:10px; }
+.fear-meter .fm-label{ font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--gold,#c3a15a); font-family:"Inter",sans-serif;}
+.fear-meter .fm-dots{ display:flex; gap:4px; }
+.fear-meter .fm-dots i{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.18); display:block; }
+.fear-meter .fm-dots i.on{ background:var(--rust,#a8502e); }
+.fear-meter.on-light .fm-dots i{ background:var(--sand-2,#eae1cd); }
+.fear-meter.on-light .fm-dots i.on{ background:var(--rust,#a8502e); }
+
+/* ---------- icon buttons: plane / boat / mountain ---------- */
+.btn-icon{ display:inline-flex; align-items:center; gap:10px; }
+.btn-icon svg{ width:16px; height:16px; flex:0 0 auto; }
+.btn-icon.btn-coral svg{ fill:#fff; }
+.btn-icon.btn-outline svg{ fill:#fff; }
+.btn-icon.btn-navy svg{ fill:#fff; }
+.btn-icon.btn-ghost{ background:transparent; border:1px solid var(--navy,#111b22); color:var(--navy,#111b22); }
+.btn-icon.btn-ghost svg{ fill:var(--navy,#111b22); }
+
+/* ---------- dashed flight-path divider ---------- */
+.flight-divider{ display:flex; align-items:center; gap:14px; margin:0 auto 40px; max-width:220px; color:var(--gold,#c3a15a); }
+.flight-divider .line{ flex:1; height:1px; background:repeating-linear-gradient(90deg, currentColor 0 5px, transparent 5px 10px); opacity:.7;}
+.flight-divider svg{ width:16px; height:16px; fill:currentColor; }
+
+/* ---------- destination hub grid card (organic) ---------- */
+.dest-card{ position:relative; display:block; background:#fff; border:1px solid var(--sand-2,#eae1cd); overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
+.dest-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+.dest-card .dc-media{ aspect-ratio:4/3; position:relative; }
+.dest-card .dc-body{ padding:18px 20px 22px; }
+.dest-card .dc-kicker{ font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--rust,#a8502e); font-weight:700; font-family:"Inter",sans-serif;}
+.dest-card h3{ font-size:1.2rem; margin:.25em 0 .3em; font-style:italic; font-weight:400;}
+.dest-card p{ font-size:.85rem; margin:0; }
+
+/* ---------- pick-your-fear chips ---------- */
+.fear-picker{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+.fear-picker a{ border:1px solid var(--sand-2,#eae1cd); background:#fff; padding:14px 22px; font-family:"Inter",sans-serif; font-weight:600; font-size:.85rem; color:var(--navy,#111b22); display:flex; flex-direction:column; align-items:center; gap:6px; min-width:110px; transition:border-color .2s ease, transform .2s ease; }
+.fear-picker a:hover{ border-color:var(--rust,#a8502e); transform:translateY(-2px); }
+.fear-picker a .fp-icon{ font-size:1.4rem; }
+
+/* ---------- breadcrumb ---------- */
+.crumb{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; font-family:"Inter",sans-serif; color:rgba(255,255,255,.6); display:flex; gap:8px; align-items:center; margin-bottom:18px;}
+.crumb a{ color:rgba(255,255,255,.85); }
+.crumb a:hover{ color:var(--gold,#c3a15a); }
+.crumb.on-light{ color:var(--ink-soft,#5c5648); }
+.crumb.on-light a{ color:var(--navy,#111b22); }

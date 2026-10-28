@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MO7LEY Travel — Trips We've Actually Lived</title>
+<meta name="description" content="MO7LEY Travel: group trips, personalized concierge planning, and guided adventures — only to places we've actually been and know well.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+</head>
+<body data-page="home" data-loader="compass" data-loader-label="charting the world">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<!-- ============ HERO ============ -->
+<header id="hero" class="shape-torn-bottom">
+  <div class="hero-media" id="hero-media"></div>
+  <div class="hero-scrim"></div>
+  <div class="sticker gold rot-2 hero-sticker"><span>Motley:<br>a chaotic,<br>curated mix.</span></div>
+  <div class="hero-inner">
+    <span class="eyebrow reveal in">Group Trips · Concierge Planning · Guided Adventures</span>
+    <h1 class="reveal in">Travel like you've actually <em>been there</em>.</h1>
+    <p class="lead reveal in">We only send you to places we've spent real time in ourselves. No stock-photo itineraries, no guesswork — just mountains worth summiting, reefs worth diving, and memories that outlast the trip.</p>
+    <div class="hero-cta reveal in">
+      <a href="group-trips.html" class="btn btn-coral btn-icon"><svg viewBox="0 0 24 24"><path d="M12 2l1 9h6l-2 3H7l-2-3h6l1-9z"/><path d="M4 17l8 3 8-3-2 4H6l-2-4z"/></svg>See the Maldives Trip</a>
+      <a href="contact.html" class="btn btn-outline btn-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg>Plan a Custom Trip</a>
+    </div>
+    <div class="stat-row reveal in">
+      <div class="stat"><b id="stat-countries">0</b><span>Places We've Actually Lived In</span></div>
+      <div class="stat"><b>1</b><span>Founder Running It</span></div>
+      <div class="stat"><b>6</b><span>Ways to Get After It</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>SCROLL</span><span class="dot"></span></div>
+</header>
+
+<!-- ============ ABOUT / MANIFESTO (teaser) ============ -->
+<section id="about" class="section-pad">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">Why MO7LEY</span>
+      <h2>Everything we offer, we've actually done.</h2>
+      <p>MO7LEY (yeah — "motley," because our trip list is a random, beautiful mix of everything) is run by someone who'd rather be underwater or on a ridgeline than behind a desk. Built on one rule: we don't send you somewhere until we've spent real time there ourselves.</p>
+      <ul class="manifesto-list">
+        <li><span class="ico">✓</span> Only destinations we've personally spent serious time in</li>
+        <li><span class="ico">✓</span> A different kind of luxury — earned firsthand, not just booked</li>
+        <li><span class="ico">✓</span> Nature + activity first — mountains, reefs, waves, open sky</li>
+        <li><span class="ico">✓</span> Still happy to handle every detail, for every kind of traveler</li>
+      </ul>
+      <div class="founder-row">
+        <div class="founder-card">
+          <div class="av">V</div>
+          <div><b>Vlad Ivanenko</b><span>Founder · FPV/Drone Pilot</span></div>
+        </div>
+      </div>
+      <a href="about.html" class="btn btn-navy btn-sm" style="margin-top:26px;">Read Our Full Story →</a>
+    </div>
+    <div class="reveal" style="position:relative;">
+      <div class="about-visual shape-b">
+        <div class="tag">Earth 🌍 Ocean 🌊 Sky 🪂</div>
+      </div>
+      <div class="sticker gold rot-1" style="position:absolute; top:-24px; right:-14px; background:var(--navy);"><span>Real Trips.<br>Real Time Spent.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROUP TRIPS ============ -->
+<section id="group-trips" class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Group Trips</span>
+      <h2>Book a spot. We handle the rest.</h2>
+      <p>Set departures, small groups, guided the whole way by Vlad. Right now: Maldives. More group trips are added only once we've done the recon ourselves.</p>
+    </div>
+    <div id="group-trip-list" class="reveal"></div>
+  </div>
+</section>
+
+<!-- ============ CONCIERGE / 3D GLOBE ============ -->
+<section id="concierge" class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Personalized Concierge</span>
+      <h2>Every place we'll build your trip around.</h2>
+      <p>Spin the globe or browse the list — organized by continent, country, and region. Click anywhere to see what we love about it and what you can do there.</p>
+    </div>
+    <div class="concierge-layout reveal">
+      <aside id="dest-list"></aside>
+      <div id="globe-stage">
+        <div id="globe-container"></div>
+        <div class="globe-hint">Drag to rotate · Scroll to zoom · Click a dot</div>
+        <button class="btn btn-navy btn-sm globe-reset" id="globe-reset">Reset View</button>
+        <div id="dest-panel">
+          <button class="close-btn" id="dest-panel-close">✕</button>
+          <div class="dp-loc" id="dp-loc"></div>
+          <h4 id="dp-name"></h4>
+          <div class="dp-tag" id="dp-tag"></div>
+          <div class="fear-meter" id="dp-fear" style="margin-bottom:12px;"></div>
+          <div class="dp-activities" id="dp-activities"></div>
+          <p id="dp-blurb"></p>
+          <div class="dp-photos" id="dp-photos"></div>
+          <a href="#" id="dp-full-link" class="btn btn-coral btn-sm">View Full Profile →</a>
+        </div>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:30px;"><a href="destinations.html" class="btn btn-ghost btn-icon btn-sm" style="border:1px solid var(--navy);color:var(--navy);"><svg viewBox="0 0 24 24"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg>Browse All Destinations</a></p>
+  </div>
+</section>
+
+<!-- ============ ACTIVITY TRIPS ============ -->
+<section id="activities" class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Activity Trips</span>
+      <h2>Pick your adrenaline.</h2>
+      <p>We build every trip around doing something, not just seeing something. Scroll through what we run.</p>
+    </div>
+    <div class="activity-tabs" id="activity-tabs"></div>
+    <div class="activity-panels" id="activity-panels"></div>
+    <p class="reveal" style="text-align:center;margin-top:36px;"><a href="activities.html" class="btn btn-navy btn-sm btn-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3l9 17H3z"/></svg>See Every Activity Trip</a></p>
+  </div>
+</section>
+
+<!-- ============ BOAT CHARTERS ============ -->
+<section id="charters" class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:#fff;">Boat Charters</span>
+      <h2>Private charters, anywhere in the world.</h2>
+      <p>We've got connections with boat charters across every destination we run — fishing, diving, freediving, or just cruising. Tell us the water, we'll find the boat.</p>
+    </div>
+    <div class="charter-grid reveal">
+      <div class="charter-card shape-a"><div class="ci">🎣</div><h4>Fishing Charters</h4><p>Offshore big-game, inshore light tackle, or a sunset cruise with a line in the water.</p></div>
+      <div class="charter-card shape-b"><div class="ci">🤿</div><h4>Dive Charters</h4><p>Liveaboards and day boats to reefs, walls, and wrecks most people never reach.</p></div>
+      <div class="charter-card shape-c"><div class="ci">🏝️</div><h4>Island Hopping</h4><p>Private boat days through island chains — swim stops, sandbars, and lunch on the water.</p></div>
+      <div class="charter-card shape-c"><div class="ci">🌅</div><h4>Sunset & Sailing</h4><p>Slow-down days for the trip — sails, sunsets, and nowhere to be.</p></div>
+      <div class="charter-card shape-a"><div class="ci">🐋</div><h4>Wildlife Charters</h4><p>Whale season, manta season, bait balls — timed to whatever's running.</p></div>
+      <div class="charter-card shape-b"><div class="ci">⚓</div><h4>Custom Charter</h4><p>Anywhere we run trips (and plenty of places we don't) — ask and we'll find it.</p></div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:36px;"><a href="charters.html" class="btn btn-coral btn-sm btn-icon"><svg viewBox="0 0 24 24"><path d="M12 2l1 9h6l-2 3H7l-2-3h6l1-9z"/><path d="M4 17l8 3 8-3-2 4H6l-2-4z"/></svg>Full Charter Details</a></p>
+  </div>
+</section>
+
+<!-- ============ JOURNAL TEASER ============ -->
+<section id="journal-teaser" class="section-pad" style="background:var(--sand);">
+  <div class="wrap" style="max-width:760px; text-align:center;">
+    <div class="flight-divider"><span class="line"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg><span class="line"></span></div>
+    <h2 class="reveal" style="font-style:italic;font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--navy);">"The fear doesn't go away. You just get more interested in what's on the other side of it."</h2>
+    <p class="reveal" style="margin-top:20px;">That's the whole philosophy behind MO7LEY — read more about why we build trips around doing the thing you're scared of, not around it.</p>
+    <a href="journal.html" class="btn btn-navy btn-sm reveal" style="margin-top:10px;">Read The Journal →</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CTA ============ -->
+<section id="contact" class="section-pad">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h2>Let's build your trip.</h2>
+      <p>Tell us where and what — diving, mountains, a group trip, or something we haven't thought of yet. We'll take it from there.</p>
+      <a href="contact.html" class="btn btn-navy">Start Planning →</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/img/earth-images.js"></script>
+<script src="vendor/geo/countries.geo.js"></script>
+<script src="vendor/geo/us-states.geo.js"></script>
+<script src="vendor/globe.gl.min.js"></script>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script src="app.js"></script>
+<script src="globe.js"></script>
+<script src="curation.js"></script>
+</body>
+</html>

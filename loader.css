@@ -1,0 +1,55 @@
+/* =========================================================
+   MO7LEY TRAVEL — themed page loaders
+   body[data-loader="plane|boat|mountain|compass"] picks the scene.
+   ========================================================= */
+#page-loader{
+  position:fixed; inset:0; z-index:9999; background:var(--navy,#111b22);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px;
+  transition:opacity .5s ease, visibility .5s ease;
+}
+#page-loader.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+.loader-stage{ width:280px; height:100px; position:relative; }
+.loader-word{ font-family:"Fraunces",serif; font-style:italic; font-weight:400; color:rgba(255,255,255,.55); font-size:.95rem; letter-spacing:.04em; }
+.loader-sub{ font-family:"Inter",sans-serif; font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold,#c3a15a); }
+
+/* ---- plane ---- */
+.loader-stage .path-line{ position:absolute; left:6%; right:6%; top:50%; height:1px; background:repeating-linear-gradient(90deg, rgba(255,255,255,.35) 0 6px, transparent 6px 12px); }
+.loader-stage .plane-icon{ position:absolute; top:50%; left:-30px; width:22px; height:22px; transform:translateY(-50%); animation:planeFly 2.6s ease-in-out infinite; }
+.loader-stage .plane-icon svg{ width:100%; height:100%; fill:var(--gold,#c3a15a); }
+@keyframes planeFly{ 0%{ left:-30px; opacity:0; } 8%{opacity:1;} 92%{opacity:1;} 100%{ left:100%; opacity:0; } }
+
+/* ---- boat ---- */
+.loader-stage .wave-line{ position:absolute; left:6%; right:6%; top:60%; height:20px; }
+.loader-stage .wave-line svg{ width:100%; height:100%; }
+.loader-stage .wave-line path{ fill:none; stroke:rgba(255,255,255,.3); stroke-width:1.5; }
+.loader-stage .boat-icon{ position:absolute; top:38%; left:-30px; width:26px; height:26px; animation:boatSail 2.8s ease-in-out infinite; }
+.loader-stage .boat-icon svg{ width:100%; height:100%; fill:var(--gold,#c3a15a); }
+@keyframes boatSail{
+  0%{ left:-30px; opacity:0; transform:translateY(0) rotate(-3deg);}
+  8%{opacity:1;}
+  25%{ transform:translateY(-3px) rotate(3deg); }
+  50%{ transform:translateY(0) rotate(-3deg); }
+  75%{ transform:translateY(-3px) rotate(3deg); }
+  92%{opacity:1;}
+  100%{ left:100%; opacity:0; transform:translateY(0) rotate(-3deg);}
+}
+
+/* ---- mountain ---- */
+.loader-stage .mtn-icon{ position:absolute; inset:0; }
+.loader-stage .mtn-icon svg{ width:100%; height:100%; }
+.loader-stage .mtn-path{ fill:none; stroke:var(--gold,#c3a15a); stroke-width:1.6; stroke-linejoin:round; stroke-dasharray:260; stroke-dashoffset:260; animation:mtnDraw 1.8s ease forwards; }
+@keyframes mtnDraw{ to{ stroke-dashoffset:0; } }
+.loader-stage .mtn-flag{ opacity:0; animation:flagIn .5s ease 1.7s forwards; transform-origin:bottom left; }
+@keyframes flagIn{ from{opacity:0; transform:scale(.5);} to{opacity:1; transform:scale(1);} }
+
+/* ---- compass (default) ---- */
+.loader-stage .compass-icon{ position:absolute; left:50%; top:50%; width:64px; height:64px; transform:translate(-50%,-50%); }
+.loader-stage .compass-icon svg{ width:100%; height:100%; }
+.loader-stage .compass-ring{ fill:none; stroke:rgba(255,255,255,.35); stroke-width:1; }
+.loader-stage .compass-tick{ stroke:rgba(255,255,255,.3); stroke-width:1; }
+.loader-stage .compass-needle{ transform-origin:32px 32px; animation:needleSpin 1.8s cubic-bezier(.2,.8,.2,1) forwards; stroke:var(--gold,#c3a15a); stroke-width:2; stroke-linecap:round; }
+@keyframes needleSpin{ 0%{ transform:rotate(0deg);} 70%{ transform:rotate(760deg);} 100%{ transform:rotate(720deg);} }
+
+@media (prefers-reduced-motion: reduce){
+  .loader-stage *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; }
+}

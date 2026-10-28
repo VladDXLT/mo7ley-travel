@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Destinations — MO7LEY Travel</title>
+<meta name="description" content="Every place MO7LEY Travel builds trips to — organized by continent, country, and region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.dh{ background:var(--navy); color:#fff; padding:190px 0 70px; text-align:center; }
+.continent-section{ margin-bottom:56px; }
+.continent-section h2{ font-style:italic; font-size:1.7rem; color:var(--navy); border-bottom:1px solid var(--sand-2); padding-bottom:16px; margin-bottom:26px; }
+.dest-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+@media(max-width:980px){ .dest-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:600px){ .dest-grid{grid-template-columns:1fr;} }
+.dc-shapes .dc-media:nth-child(3n+1){}
+</style>
+</head>
+<body data-page="destinations" data-loader="plane" data-loader-label="scanning the map">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero dh">
+  <div class="wrap">
+    <div class="crumb" style="justify-content:center;"><a href="index.html">Home</a> <span>/</span> <span>Destinations</span></div>
+    <span class="eyebrow reveal in" style="justify-content:center;">All Destinations</span>
+    <h1 class="reveal in" style="color:#fff;">Everywhere we build trips.</h1>
+    <p class="reveal in" style="max-width:560px;margin:0 auto;color:rgba(255,255,255,.75);font-family:'Inter',sans-serif;">Prefer the 3D version? <a href="index.html#concierge" style="color:var(--gold);">Spin the globe on the homepage →</a></p>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap" id="dest-hub"></div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+var CONTINENT_ORDER = ["North America","Europe","Asia","Oceania"];
+var SHAPES = ["shape-a","shape-b","shape-c"];
+window.PHOTO_LIBRARY = window.PHOTO_LIBRARY || {};
+
+function cardMedia(d, i){
+  var photo = (window.PHOTO_LIBRARY[d.id]||[])[0];
+  var bg = photo ? "background-image:url('"+photo+"');background-size:cover;background-position:center;" : "background:"+d.gradient+";";
+  return '<div class="dc-media '+SHAPES[i%3]+'" style="'+bg+'"></div>';
+}
+
+var html = "";
+CONTINENT_ORDER.forEach(function(continent){
+  var list = DESTINATIONS.filter(function(d){ return !d.hideCard && d.continent === continent; });
+  if(!list.length) return;
+  html += '<div class="continent-section reveal"><h2>'+continent+'</h2><div class="dest-grid">';
+  list.forEach(function(d, i){
+    html += '<a class="dest-card" href="destinations/'+d.id+'.html">'
+      + cardMedia(d, i)
+      + '<div class="dc-body"><div class="dc-kicker">'+d.country+'</div><h3>'+d.name+'</h3><p>'+d.tagline+'</p></div>'
+      + '</a>';
+  });
+  html += '</div></div>';
+});
+document.getElementById("dest-hub").innerHTML = html;
+document.dispatchEvent(new Event("mo7ley:content-ready"));
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

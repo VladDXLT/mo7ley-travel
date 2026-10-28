@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanghai — MO7LEY Travel</title>
+<meta name="description" content="The other side of the map — Neon skyline and a totally different pace of life — proof that MO7LEY trips aren't just beaches and mountains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../shapes.css">
+<link rel="stylesheet" href="../loader.css">
+<style>
+.dest-hero{ min-height:72vh; display:flex; align-items:flex-end; position:relative; padding:0 0 70px;
+  background:linear-gradient(180deg, rgba(9,14,17,.2), rgba(9,14,17,.9)), linear-gradient(135deg,#7c3aed,#1e1b4b); overflow:hidden; }
+.dest-hero .dh-inner{ position:relative; z-index:1; color:#fff; }
+.dest-hero h1{ font-size:clamp(2.4rem,6vw,4.2rem); color:#fff; }
+.fear-callout{ background:var(--navy); color:#fff; padding:34px 40px; margin:40px 0; position:relative; }
+.fear-callout .fc-label{ font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:700; font-family:"Inter",sans-serif; margin-bottom:10px; }
+.fear-callout p{ font-family:"Fraunces",serif; font-style:italic; font-size:1.3rem; color:#fff; margin:0; }
+.act-chip-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+.dest-gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:10px; }
+.dest-gallery .dg-feature{ grid-column:span 2; grid-row:span 2; aspect-ratio:auto !important; }
+.charter-callout{ background:var(--sand-2); border:1px solid var(--sand-2); padding:30px 34px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-top:40px; }
+</style>
+</head>
+<body data-page="destinations" data-loader="plane" data-loader-label="flying out to Shanghai">
+<script src="../loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="dest-hero">
+  <div class="wrap dh-inner">
+    <div class="crumb"><a href="../destinations.html">Destinations</a> <span>/</span> <span>Asia</span> <span>/</span> <a href="../destinations.html">China</a><span>/</span><span>Shanghai</span></div>
+    <span class="eyebrow" style="color:var(--gold);">China · Asia</span>
+    <h1>Shanghai</h1>
+    <p style="max-width:560px;color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:1.05rem;">The other side of the map</p>
+    <div class="act-chip-row"></div>
+    <div style="margin-top:22px;"><div class="fear-meter"><span class="fm-label">Fear Factor</span><div class="fm-dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;">
+      <a href="../contact.html" class="btn btn-coral btn-icon"><svg viewBox="0 0 24 24"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg>Plan A Trip Here</a>
+      <a href="../index.html#concierge" class="btn btn-outline">View On The Globe</a>
+    </div>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap" style="max-width:760px;">
+    <p class="reveal" style="font-size:1.1rem;color:var(--navy);">Neon skyline and a totally different pace of life — proof that MO7LEY trips aren't just beaches and mountains.</p>
+    <p class="reveal">This one is less about a single activity and more about the pace of the place — slowing down enough to actually be somewhere, not just pass through it.</p>
+    <div class="fear-callout reveal shape-a">
+      <div class="fc-label">The Fear We Faced Here</div>
+      <p>"Being the least experienced person in the group and going anyway."</p>
+    </div>
+    <p class="reveal">Shanghai is exactly why MO7LEY exists — we don't send anyone somewhere we've only seen in photos. We've spent real time in China, specifically Shanghai, and every experience we build here comes from that time on the ground (or underwater).</p>
+    
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--sand-2);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The Gallery</span><h2>Shanghai, as we've seen it.</h2></div>
+    <div class="dest-gallery reveal" id="dest-gallery"></div>
+  </div>
+</section>
+
+
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Nearby</span><h2>More of Asia.</h2></div>
+    <div class="dest-grid reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <a class="dest-card" href="../destinations/maldives.html">
+      <div class="dc-media" style="background:linear-gradient(135deg,#0ea5b7,#0a3d62);"></div>
+      <div class="dc-body"><div class="dc-kicker">Maldives</div><h3>Maldives</h3><p>Where the ocean shows off</p></div>
+    </a>
+    <a class="dest-card" href="../destinations/philippines.html">
+      <div class="dc-media" style="background:linear-gradient(135deg,#12b5c9,#0b4f6c);"></div>
+      <div class="dc-body"><div class="dc-kicker">Philippines</div><h3>Philippines</h3><p>7,000 islands of blue</p></div>
+    </a>
+    <a class="dest-card" href="../destinations/malaysia.html">
+      <div class="dc-media" style="background:linear-gradient(135deg,#1d9a6c,#0b4f6c);"></div>
+      <div class="dc-body"><div class="dc-kicker">Malaysia</div><h3>Malaysia</h3><p>Jungle meets reef</p></div>
+    </a></div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--navy);text-align:center;">
+  <div class="wrap">
+    <h2 class="reveal" style="color:#fff;font-style:italic;">Ready to see Shanghai for yourself?</h2>
+    <a href="../contact.html" class="btn btn-coral reveal">Start Planning →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="../data.js"></script>
+<script src="../content-helpers.js"></script>
+<script src="../shared.js"></script>
+<script src="../site-edits.js"></script>
+<script src="../editor.js"></script>
+<script>
+window.PHOTO_LIBRARY = window.PHOTO_LIBRARY || {};
+document.getElementById("dest-gallery").innerHTML = (function(){
+  var photos = (window.PHOTO_LIBRARY["shanghai"]||[]);
+  var extra = { 0:"dg-feature shape-b", 4:"shape-a", 8:"shape-c" };
+  var html = "";
+  for(var i=0;i<12;i++){
+    var url = photos[i];
+    var cls = "photo-slot" + (extra[i] ? " "+extra[i] : "");
+    html += '<div class="'+cls+'" data-loc="shanghai" data-idx="'+i+'" data-empty="'+(url?"false":"true")+'">' + (url? '<img src="'+url+'" alt="Shanghai">':"") + '</div>';
+  }
+  return html;
+})();
+document.dispatchEvent(new Event("mo7ley:content-ready"));
+</script>
+<script src="../curation.js"></script>
+</body>
+</html>

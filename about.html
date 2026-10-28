@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — MO7LEY Travel</title>
+<meta name="description" content="Two founders, one rule: we don't send you somewhere until we've spent real time there ourselves. The story behind MO7LEY Travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero{ background:var(--navy); color:#fff; padding:190px 0 90px; position:relative; overflow:hidden; }
+.page-hero::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 85% 20%, rgba(195,161,90,.16), transparent 55%); }
+.page-hero h1{ font-size:clamp(2.2rem,5vw,3.6rem); color:#fff; position:relative; }
+.page-hero p.lead{ max-width:560px; color:rgba(255,255,255,.72); font-family:"Inter",sans-serif; position:relative; }
+.timeline{ max-width:760px; margin:0 auto; }
+.tl-item{ display:grid; grid-template-columns:110px 1fr; gap:26px; padding:26px 0; border-top:1px solid var(--sand-2); }
+.tl-item:first-child{ border-top:none; }
+.tl-year{ font-family:"Fraunces",serif; font-style:italic; color:var(--rust); font-size:1.3rem; }
+.tl-item h3{ font-size:1.15rem; margin-bottom:6px; }
+.values-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+.value-card{ background:#fff; border:1px solid var(--sand-2); padding:30px; }
+.value-card .vi{ font-size:1.5rem; margin-bottom:12px; }
+.value-card h4{ font-style:italic; font-weight:400; font-size:1.15rem; }
+.founder-detail{ display:grid; grid-template-columns:minmax(0,480px); justify-content:center; }
+.founder-detail-card{ background:#fff; border:1px solid var(--sand-2); padding:36px; }
+.founder-detail-card .fd-photo{ aspect-ratio:1; margin-bottom:20px; background:linear-gradient(150deg,#33645d,#111b22); }
+.founder-detail-card h3{ font-style:italic; font-weight:400; font-size:1.5rem; }
+.founder-detail-card .fd-role{ color:var(--rust); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.7rem; margin-bottom:14px; font-family:"Inter",sans-serif;}
+</style>
+</head>
+<body data-page="about" data-loader="compass" data-loader-label="finding true north">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> <span>/</span> <span>Our Story</span></div>
+    <span class="eyebrow reveal in">Our Story</span>
+    <h1 class="reveal in">One founder. One rule.</h1>
+    <p class="lead reveal in">We don't send you somewhere until we've spent real time there ourselves. Everything else about MO7LEY follows from that.</p>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap" style="max-width:760px;">
+    <p class="reveal" style="font-size:1.15rem;color:var(--navy);">MO7LEY started the way most good ideas do — as an argument about a bad trip someone else booked. A "luxury" package that turned out to be a resort pool and a shuttle bus. Vlad had spent years doing the opposite: showing up somewhere, staying long enough to actually understand it, and building the trip around what the place was actually good for — not what looked good in a brochure.</p>
+    <p class="reveal">So MO7LEY exists to do exactly one thing well: send people to the places we know, to do the things that scare us a little, guided by someone who's already made the mistakes so you don't have to. <em style="font-family:'Fraunces',serif;color:var(--rust);">Motley</em> — because the trip list is a genuinely random, chaotic mix of everything we love. Reef dives one month, alpine ridgelines the next.</p>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--sand-2);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">How It Started</span><h2>The short version.</h2></div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-year">Year 1</div><div><h3>The bad trip</h3><p>A "luxury" booking that was really just a pool and a shuttle bus. The moment we decided we could do better.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year">Year 2</div><div><h3>The Maldives, properly</h3><p>Weeks, not days. Manta cleaning stations, drift dives, sandbanks with nobody else on them. This became the trip we couldn't stop talking about.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year">Year 3</div><div><h3>Everywhere else</h3><p>Mountains in three countries, reefs in four, a lot of plane windows in between. The destination list stopped being a bucket list and started being a résumé.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year">Today</div><div><h3>MO7LEY Travel</h3><p>Group trips, concierge planning, and guided adventures — built only from places we've actually spent time in.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">What We Believe</span><h2>Four things we won't compromise on.</h2></div>
+    <div class="values-grid reveal">
+      <div class="value-card shape-a"><div class="vi">🧭</div><h4>We go first</h4><p>If we haven't spent real time somewhere, it doesn't go on the list. No exceptions, no "our partner says it's great."</p></div>
+      <div class="value-card shape-c"><div class="vi">🫀</div><h4>Fear is the point</h4><p>The best trips leave you a little different than you started. We build toward that on purpose.</p></div>
+      <div class="value-card shape-b"><div class="vi">🌊</div><h4>Nature comes first</h4><p>Every itinerary is built around the reef, the ridgeline, or the swell — comfort is designed in around that, not the other way around.</p></div>
+      <div class="value-card shape-a"><div class="vi">🤝</div><h4>Still for everyone</h4><p>Adventure-first doesn't mean exclusive. We tailor intensity — and comfort — to who's actually going.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--navy);">
+  <div class="wrap">
+    <div class="section-head reveal" style="position:relative;">
+      <span class="eyebrow" style="color:var(--gold);">Who's Running It</span><h2 style="color:#fff;">Meet Vlad.</h2>
+      <div class="sticker cream rot-2" style="position:absolute; top:-18px; right:10px;"><span>1 Founder.<br>0 Desk Jobs.</span></div>
+    </div>
+    <div class="founder-detail reveal">
+      <div class="founder-detail-card">
+        <div class="fd-photo shape-b"></div>
+        <div class="fd-role">Founder</div>
+        <h3>Vlad Ivanenko</h3>
+        <p>Earth, ocean, sky — in that order, most weeks. Commercial FPV/drone pilot who's spent more nights in a wetsuit than he'd like to admit. Runs every trip personally — group departures, concierge itineraries, and guided adventures alike.</p>
+        <p><a href="https://www.instagram.com/vladivanenko_/" target="_blank" rel="noopener" style="font-weight:700;color:var(--gold);">@vladivanenko_ →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="text-align:center;">
+  <div class="wrap">
+    <div class="flight-divider"><span class="line"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 17H3z"/></svg><span class="line"></span></div>
+    <h2 class="reveal" style="font-style:italic;">Curious what scares you (in a good way)?</h2>
+    <a href="activities.html" class="btn btn-coral reveal" style="margin-top:14px;">See Every Activity Trip →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script src="curation.js"></script>
+</body>
+</html>

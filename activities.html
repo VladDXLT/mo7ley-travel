@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Trips — MO7LEY Travel</title>
+<meta name="description" content="Scuba, freediving, skydiving, mountaineering, surf, and boat charters — every way we build a trip around doing something.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.act{ background:var(--navy); color:#fff; padding:190px 0 80px; text-align:center; }
+.activity-full{ display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid var(--sand-2); margin-bottom:30px; scroll-margin-top:100px; }
+.activity-full:nth-child(even){ direction:rtl; }
+.activity-full:nth-child(even) > *{ direction:ltr; }
+.activity-full .af-media{ min-height:420px; position:relative; }
+.activity-full .af-body{ padding:52px; }
+.activity-full h2{ font-size:2rem; }
+.af-gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:110px; gap:8px; margin:20px 0; }
+.af-gallery .af-feature{ grid-column:span 2; grid-row:span 2; aspect-ratio:auto !important; }
+</style>
+</head>
+<body data-page="activities" data-loader="mountain" data-loader-label="picking a summit">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero act">
+  <div class="wrap">
+    <div class="crumb" style="justify-content:center;"><a href="index.html">Home</a> <span>/</span> <span>Activity Trips</span></div>
+    <span class="eyebrow reveal in" style="justify-content:center;">Activity Trips</span>
+    <h1 class="reveal in" style="color:#fff;">Pick your fear.</h1>
+    <p class="reveal in" style="max-width:560px;margin:0 auto;color:rgba(255,255,255,.75);font-family:'Inter',sans-serif;">Not sure where to start? Pick the flavor of scared you're after.</p>
+  </div>
+</header>
+
+<section class="section-pad" style="padding-top:70px;">
+  <div class="wrap">
+    <div class="fear-picker reveal" id="fear-picker"></div>
+  </div>
+</section>
+
+<section class="section-pad" style="padding-top:0;">
+  <div class="wrap" id="activity-full-list"></div>
+</section>
+
+<section class="section-pad" style="background:var(--navy);text-align:center;">
+  <div class="wrap">
+    <h2 class="reveal" style="color:#fff;font-style:italic;">Don't see the fear you're looking for?</h2>
+    <p class="reveal" style="color:rgba(255,255,255,.7);">If it involves nature, elevation, or open water, we've probably got a connection for it.</p>
+    <a href="contact.html" class="btn btn-coral reveal">Ask Us Anything →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+window.PHOTO_LIBRARY = window.PHOTO_LIBRARY || {};
+function photoSlots(loc, count, extra){
+  var photos = (window.PHOTO_LIBRARY[loc]||[]);
+  extra = extra || {};
+  var html = "";
+  for(var i=0;i<count;i++){
+    var url = photos[i];
+    var cls = "photo-slot" + (extra[i] ? " "+extra[i] : "");
+    html += '<div class="'+cls+'" data-loc="'+loc+'" data-idx="'+i+'" data-empty="'+(url?"false":"true")+'">' + (url? '<img src="'+url+'" alt="'+loc+'">':"") + '</div>';
+  }
+  return html;
+}
+function fearDots(score){
+  var d=""; for(var i=1;i<=5;i++) d += '<i class="'+(i<=score?"on":"")+'"></i>';
+  return '<div class="fear-meter"><span class="fm-label">Fear Factor</span><div class="fm-dots">'+d+'</div></div>';
+}
+var ACTIVITY_FEAR = { skydive:5, mountaineering:4, freedive:4, scuba:3, surf:3, boat:2 };
+
+document.getElementById("fear-picker").innerHTML = ACTIVITIES.map(function(a){
+  return '<a href="#'+a.id+'"><span class="fp-icon">'+a.icon+'</span>'+a.name+'</a>';
+}).join("");
+
+document.getElementById("activity-full-list").innerHTML = ACTIVITIES.map(function(a){
+  var places = DESTINATIONS.filter(function(d){ return d.activities.indexOf(a.id)!==-1 && !d.hideCard; });
+  return '<div class="activity-full reveal" id="'+a.id+'">'
+    + '<div class="af-media shape-a" style="background:linear-gradient(150deg,#33645d,#111b22);"><div class="icon-badge" style="position:absolute;top:20px;left:20px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.4rem;">'+a.icon+'</div></div>'
+    + '<div class="af-body">'
+    + '<h2>'+a.name+'</h2>'
+    + '<p>'+a.blurb+'</p>'
+    + fearDots(ACTIVITY_FEAR[a.id]||2)
+    + '<p style="font-weight:700;color:var(--navy);font-size:.88rem;margin-top:14px;">Where we run it: '+ (places.map(function(d){return '<a href="destinations/'+d.id+'.html" style="color:var(--rust);">'+d.name+'</a>';}).join(", ") || "ask us") +'</p>'
+    + '<div class="af-gallery">'+photoSlots("activity-"+a.id, 8, {0:"af-feature shape-c"})+'</div>'
+    + '<a href="contact.html" class="btn btn-coral btn-sm">Ask About '+a.name+'</a>'
+    + '</div></div>';
+}).join("");
+document.dispatchEvent(new Event("mo7ley:content-ready"));
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

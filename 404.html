@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost — MO7LEY Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.lost{ min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:var(--navy); color:#fff; padding:120px 24px; }
+.lost .num{ font-family:"Fraunces",serif; font-style:italic; font-size:clamp(5rem,14vw,9rem); color:var(--gold); line-height:1; }
+</style>
+</head>
+<body data-page="404" data-loader="compass" data-loader-label="recalculating">
+<script src="loader.js"></script>
+<div id="nav-slot"></div>
+<div class="lost">
+  <div>
+    <div class="num">404</div>
+    <div class="flight-divider"><span class="line"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg><span class="line"></span></div>
+    <h1 style="color:#fff;font-style:italic;font-size:1.8rem;">Even we haven't been here.</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:420px;margin:0 auto 28px;font-family:'Inter',sans-serif;">This page doesn't exist — which, on this site, is a real disqualifier. Try one of these instead.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html" class="btn btn-coral">Take Me Home</a>
+      <a href="destinations.html" class="btn btn-outline">Browse Destinations</a>
+    </div>
+  </div>
+</div>
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boat Charters — MO7LEY Travel</title>
+<meta name="description" content="Private boat charters anywhere in the world — fishing, diving, freediving, island-hopping, or just getting out on the water.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.ch{ background:linear-gradient(160deg,#111b22,#1f4440); color:#fff; padding:190px 0 90px; }
+.charter-loc-grid{ display:flex; flex-wrap:wrap; gap:10px; }
+.charter-loc-grid a{ background:#fff; border:1px solid var(--sand-2); padding:9px 16px; font-size:.82rem; font-weight:600; color:var(--navy); font-family:"Inter",sans-serif; }
+.charter-loc-grid a:hover{ border-color:var(--rust); color:var(--rust); }
+</style>
+</head>
+<body data-page="charters" data-loader="boat" data-loader-label="untying the lines">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero ch">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> <span>/</span> <span>Boat Charters</span></div>
+    <span class="eyebrow" style="color:var(--gold);">Boat Charters</span>
+    <h1 style="color:#fff;font-size:clamp(2.2rem,5vw,3.6rem);">Private charters, anywhere in the world.</h1>
+    <p style="max-width:600px;color:rgba(255,255,255,.78);font-family:'Inter',sans-serif;">We've got connections with boat charters across every destination we run — fishing, diving, freediving, or just cruising. Tell us the water, we'll find the boat.</p>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap">
+    <div class="charter-grid reveal">
+      <div class="charter-card shape-a" style="background:var(--sand-2);border-color:var(--sand-2);"><div class="ci">🎣</div><h4 style="color:var(--navy);">Fishing Charters</h4><p style="color:var(--ink-soft);">Offshore big-game, inshore light tackle, or a sunset cruise with a line in the water.</p></div>
+      <div class="charter-card shape-b" style="background:#fff;border-color:var(--sand-2);"><div class="ci">🤿</div><h4 style="color:var(--navy);">Dive Charters</h4><p style="color:var(--ink-soft);">Liveaboards and day boats to reefs, walls, and wrecks most people never reach.</p></div>
+      <div class="charter-card shape-c" style="background:var(--sand-2);border-color:var(--sand-2);"><div class="ci">🏝️</div><h4 style="color:var(--navy);">Island Hopping</h4><p style="color:var(--ink-soft);">Private boat days through island chains — swim stops, sandbars, and lunch on the water.</p></div>
+      <div class="charter-card shape-c" style="background:#fff;border-color:var(--sand-2);"><div class="ci">🌅</div><h4 style="color:var(--navy);">Sunset &amp; Sailing</h4><p style="color:var(--ink-soft);">Slow-down days for the trip — sails, sunsets, and nowhere to be.</p></div>
+      <div class="charter-card shape-a" style="background:var(--sand-2);border-color:var(--sand-2);"><div class="ci">🐋</div><h4 style="color:var(--navy);">Wildlife Charters</h4><p style="color:var(--ink-soft);">Whale season, manta season, bait balls — timed to whatever's running.</p></div>
+      <div class="charter-card shape-b" style="background:#fff;border-color:var(--sand-2);"><div class="ci">⚓</div><h4 style="color:var(--navy);">Custom Charter</h4><p style="color:var(--ink-soft);">Anywhere we run trips (and plenty of places we don't) — ask and we'll find it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--sand-2);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Where We Charter</span><h2>Every coastline we already know.</h2></div>
+    <div class="charter-loc-grid reveal" id="charter-locs"></div>
+  </div>
+</section>
+
+<section class="section-pad" style="text-align:center;">
+  <div class="wrap">
+    <div class="flight-divider"><span class="line"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1 9h6l-2 3H7l-2-3h6l1-9z"/><path d="M4 17l8 3 8-3-2 4H6l-2-4z"/></svg><span class="line"></span></div>
+    <h2 class="reveal" style="font-style:italic;">Tell us the water. We'll find the boat.</h2>
+    <a href="contact.html" class="btn btn-coral reveal">Request A Charter →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+document.getElementById("charter-locs").innerHTML = DESTINATIONS
+  .filter(function(d){ return !d.hideCard && d.activities.indexOf("boat")!==-1; })
+  .map(function(d){ return '<a href="destinations/'+d.id+'.html">'+d.name+'</a>'; }).join("");
+document.dispatchEvent(new Event("mo7ley:content-ready"));
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

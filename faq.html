@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — MO7LEY Travel</title>
+<meta name="description" content="Common questions about how MO7LEY Travel works.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.faq{ background:var(--navy); color:#fff; padding:190px 0 80px; text-align:center; }
+.faq-list{ max-width:760px; margin:0 auto; }
+.faq-q{ border-top:1px solid var(--sand-2); padding:24px 0; cursor:pointer; }
+.faq-q:last-child{ border-bottom:1px solid var(--sand-2); }
+.faq-q h3{ display:flex; justify-content:space-between; align-items:center; font-size:1.05rem; font-weight:600; font-family:"Inter",sans-serif; color:var(--navy); margin:0; }
+.faq-q .plus{ color:var(--rust); font-size:1.3rem; transition:transform .2s ease; }
+.faq-q.open .plus{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.faq-q.open .faq-a{ max-height:220px; }
+.faq-a p{ padding-top:12px; }
+</style>
+</head>
+<body data-page="faq" data-loader="compass" data-loader-label="answering the obvious ones">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero faq">
+  <div class="wrap">
+    <div class="crumb" style="justify-content:center;"><a href="index.html">Home</a> <span>/</span> <span>FAQ</span></div>
+    <span class="eyebrow reveal in" style="justify-content:center;">FAQ</span>
+    <h1 class="reveal in" style="color:#fff;">Questions, answered.</h1>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap faq-list reveal" id="faq-list">
+    <div class="faq-q"><h3>How is MO7LEY different from a normal travel agency? <span class="plus">+</span></h3><div class="faq-a"><p>We only offer destinations we've personally spent real time in — not places "partners" recommend. Every itinerary is built from firsthand knowledge, and it's built around nature and activity first — comfort is designed in around that.</p></div></div>
+    <div class="faq-q"><h3>What's the difference between Group Trips and Concierge Planning? <span class="plus">+</span></h3><div class="faq-a"><p>Group Trips are set departures with a small crew, guided the whole way by Vlad (currently just the Maldives). Concierge Planning is a fully custom itinerary built around your dates, group, and fear-of-choice, for any destination on our list.</p></div></div>
+    <div class="faq-q"><h3>What does a "Guided Trip" mean? <span class="plus">+</span></h3><div class="faq-a"><p>Vlad personally guides your trip on the ground — not just planning it, but being there for it. Available for a limited number of trips per year.</p></div></div>
+    <div class="faq-q"><h3>Do you only do extreme stuff? <span class="plus">+</span></h3><div class="faq-a"><p>No — we lean adventure-first, but we tailor intensity to who's actually traveling. Not every day needs to be a summit push or a deep dive.</p></div></div>
+    <div class="faq-q"><h3>How far in advance should I book? <span class="plus">+</span></h3><div class="faq-a"><p>For the Maldives group trip, as early as possible — seats are limited and seasonal. For concierge trips, 2-4 months gives us the most room to work with.</p></div></div>
+    <div class="faq-q"><h3>Can you arrange a boat charter without a full trip? <span class="plus">+</span></h3><div class="faq-a"><p>Yes — fishing, diving, or just a day on the water. See the Boat Charters page or just ask.</p></div></div>
+  </div>
+</section>
+
+<section class="section-pad" style="text-align:center;background:var(--sand-2);">
+  <div class="wrap">
+    <h2 class="reveal" style="font-style:italic;">Still have a question?</h2>
+    <a href="contact.html" class="btn btn-navy reveal">Ask Us Directly →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script>
+document.getElementById("faq-list").addEventListener("click", function(e){
+  var q = e.target.closest(".faq-q");
+  if(!q) return;
+  q.classList.toggle("open");
+});
+</script>
+<script src="curation.js"></script>
+</body>
+</html>

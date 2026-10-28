@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — MO7LEY Travel</title>
+<meta name="description" content="Why MO7LEY builds trips around doing the thing you're scared of, not around it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shapes.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+.page-hero.journal{ background:var(--navy); color:#fff; padding:190px 0 100px; text-align:center; }
+.journal-body{ max-width:700px; margin:0 auto; }
+.journal-body p{ font-size:1.08rem; color:var(--ink); line-height:1.85; }
+.journal-body p.drop::first-letter{ font-family:"Fraunces",serif; font-size:3.6rem; float:left; line-height:.8; padding:6px 10px 0 0; color:var(--rust); font-style:italic; }
+.pull{ font-family:"Fraunces",serif; font-style:italic; font-size:1.6rem; color:var(--navy); text-align:center; margin:50px auto; max-width:600px; line-height:1.4; }
+.entry-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.entry-card{ background:#fff; border:1px solid var(--sand-2); padding:26px; }
+.entry-card .ec-kicker{ font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--rust); font-weight:700; font-family:"Inter",sans-serif;}
+.entry-card h4{ font-style:italic; font-weight:400; font-size:1.15rem; margin:.3em 0 .4em; }
+</style>
+</head>
+<body data-page="journal" data-loader="mountain" data-loader-label="climbing to the point">
+<script src="loader.js"></script>
+<div id="scroll-progress"></div>
+<div id="nav-slot"></div>
+
+<header class="page-hero journal">
+  <div class="wrap">
+    <div class="crumb" style="justify-content:center;"><a href="index.html">Home</a> <span>/</span> <span>Journal</span></div>
+    <span class="eyebrow reveal in" style="justify-content:center;">The Journal</span>
+    <h1 class="reveal in" style="font-style:italic;">On fear, on purpose.</h1>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap journal-body">
+    <p class="reveal drop">There's a specific feeling right before you jump — off a boat, out of a plane, onto an exposed ridge you can't easily reverse out of. Your body throws every alarm it has. And then you do it anyway, and for about four seconds the whole world gets extremely quiet and extremely clear. That feeling is the entire business model.</p>
+    <p class="reveal">We didn't set out to build a "fear" company. We set out to stop booking trips that felt like an extension of home — a nicer bed, a bigger pool, the same version of comfortable you already have. Somewhere along the way we noticed the trips we actually talked about years later were never the comfortable ones. They were the dive where visibility dropped to nothing and a shape moved in the blue. The ridge where the wind picked up and turning around stopped being obviously the right call. The door of a plane at altitude.</p>
+    <p class="pull reveal">"Comfortable is fine. It's just not what you'll remember."</p>
+    <p class="reveal">So MO7LEY is built around a simple, slightly stubborn idea: we go toward the thing that makes your stomach drop, not around it. Not recklessly — every trip we run is guided by people who've done it enough times to know where the real risk is and where it's just adrenaline talking. But we won't sand the edges off just to make it sound easier than it is.</p>
+    <p class="reveal">This is also why we only offer places we've actually been. You can't responsibly point someone toward their fear in a place you've only seen on a map. We've made the mistakes already — the current we underestimated, the peak we turned back from, the charter captain who oversold the "calm" crossing. That's the whole value of planning with two people instead of a search engine: judgment earned the hard way.</p>
+    <p class="reveal">If you're the kind of person who's already thinking about the thing that scares you — swimming with something big, jumping from something high, hiking somewhere thin on oxygen — you're exactly who this company is for. We'll meet you there.</p>
+    <p class="reveal" style="text-align:right;font-style:italic;font-family:'Fraunces',serif;color:var(--rust);">— Vlad</p>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--sand-2);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">More From The Journal</span><h2>Field notes.</h2></div>
+    <div class="entry-grid reveal">
+      <div class="entry-card shape-a"><div class="ec-kicker">Maldives</div><h4>What the fear actually feels like at 18 meters</h4><p>Notes from the first open-water manta encounter of the season.</p></div>
+      <div class="entry-card shape-b"><div class="ec-kicker">Switzerland</div><h4>The ridge we almost didn't finish</h4><p>On knowing the difference between fear and a genuinely bad call.</p></div>
+      <div class="entry-card shape-c"><div class="ec-kicker">Philippines</div><h4>Why we build in a rest day after the big dive</h4><p>The unglamorous logistics of doing scary things safely.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="text-align:center;">
+  <div class="wrap">
+    <div class="flight-divider"><span class="line"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 16l7-2 5.5 3L22 14 12 2 9.5 3l4 8.5L7 13.5 4 11l-2 1z"/></svg><span class="line"></span></div>
+    <h2 class="reveal" style="font-style:italic;">Ready to find out what's on the other side?</h2>
+    <a href="contact.html" class="btn btn-coral reveal" style="margin-top:14px;">Start Planning →</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="data.js"></script>
+<script src="content-helpers.js"></script>
+<script src="shared.js"></script>
+<script src="site-edits.js"></script>
+<script src="editor.js"></script>
+<script src="curation.js"></script>
+</body>
+</html>
